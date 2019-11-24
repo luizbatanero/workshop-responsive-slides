@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Layout responsivo com styled-components</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/rocketseat.css">
+		<link rel="stylesheet" href="lib/css/dracula.css">
+
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/luiz.png" class="plain" alt="Luiz Batanero" style="width:120px; border-radius: 50%">
+					<h3>Luiz Batanero</h3>
+					<small>
+						<a target="_blank" href="https://github.com/luizbatanero">github.com/luizbatanero</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>
+						Layout responsivo<br>
+						no ReactJS com<br>
+						<span style="color: #04D361">styled-components</span>
+					</h2>
+				</section>
+
+				<section>
+					<h2 class="section-title" style="text-align:left">
+						<span>01.</span>
+						styled<br>components
+					</h2>
+				</section>
+				<section>
+<pre><code class="javascript" data-trim data-noescape>
+import styled from 'styled-components';
+
+const Box = styled.div`
+  background: #7159c1;
+  padding: 50px;
+  color: #fff;
+`;
+
+function MyReactComponent() {
+  return &lt;Box&gt;Exemplo&lt;Box /&gt;;
+}
+</code></pre>
+          <div class="fragment" style="display:inline-block;background:#7159c1;padding:50px;color:#fff">
+            Exemplo
+          </div>
+				</section>
+
+				<section>
+					<h2 class="section-title" style="text-align:left">
+						<span>02.</span>
+						layout<br>responsivo
+					</h2>
+        </section>
+        <section><p>Viewport</p></section>
+				<section>
+					<pre><code class="html" data-trim data-noescape>
+            &lt;meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            &gt;
+					</code></pre>
+        </section>
+        <section><p>Media queries</p></section>
+        <section>
+          <pre><code class="css" data-trim data-noescape>
+            @media () {
+
+
+
+            }
+					</code></pre>
+        </section>
+        <section>
+          <pre><code class="css" data-trim data-noescape>
+            @media (max-width: 768px) {
+
+
+
+            }
+					</code></pre>
+        </section>
+        <section>
+          <pre><code class="css" data-trim data-noescape>
+            @media (max-width: 768px) {
+              body {
+                background: #7159c1;
+              }
+            }
+					</code></pre>
+        </section>
+        <section>
+          <pre><code class="css" data-trim data-noescape>
+            @media (max-width: 600px) {
+              body {
+                background: red;
+              }
+            }
+
+            @media (max-width: 768px) {
+              body {
+                background: #7159c1;
+              }
+            }
+					</code></pre>
+        </section>
+        <section><p>Unidades relativas</p></section>
+        <section>
+          <h3 class="fragment fade-in-them-semi-out">%</h3>
+          <h3 class="fragment fade-in-them-semi-out">vw  vh</h3>
+          <h3 class="fragment fade-in-them-semi-out">em</h3>
+          <h3 class="fragment fade-in-them-semi-out">rem</h3>
+				</section>
+				<section>
+					<a href="https://github.com/luizbatanero/workshop-responsive" target="_blank" style="display:block;margin-bottom:1.5em">
+						github.com/luizbatanero/workshop-responsive
+					</a>
+<pre style="width:100%;font-size:.7em"><code class="bash" data-trim data-noescape>
+	<span style="opacity: .5">$</span> git clone
+	  git@github.com:luizbatanero/workshop-responsive.git
+</code></pre>
+<pre style="width:100%;font-size:.7em"><code class="bash" data-trim data-noescape>
+	<span style="opacity: .5">$</span> yarn
+</code></pre>
+<pre style="width:100%;font-size:.7em"><code class="bash" data-trim data-noescape>
+	<span style="opacity: .5">$</span> yarn start
+</code></pre>
+				</section>
+			</div>
+
+			<img class="logo" src="img/rocket.svg" alt="Rocketseat">
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: false,
+				transition: 'fade',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
